@@ -824,7 +824,7 @@ export default function Contact() {
                 margin: '0 0 16px',
                 color: '#F5F0E8',
               }}>
-                Contact<span style={{ color: '#CCFF00' }}>.</span>
+                Contact<span style={{ color: '#FF4D00' }}>.</span>
               </h2>
               <div style={{
                 display: 'flex',

@@ -755,7 +755,7 @@ export default function Hero() {
           <div className="hero-name-block">
             <span className="hero-name-line hero-name-white">SHAHNWAJ</span>
             <span className="hero-name-line hero-name-lime">
-              ALAM<span style={{ color: 'rgba(204,255,0,0.2)' }}>.</span>
+              ALAM<span style={{ color: '#FF4D00' }}>.</span>
             </span>
           </div>
 

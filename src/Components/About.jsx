@@ -2804,8 +2804,8 @@ export default function About() {
                 margin: '0 0 12px',
                 color: '#F5F0E8',
               }}>
-                About<span style={{ color: '#CCFF00' }}> Me</span>
-                <span style={{ color: '#CCFF00' }}>.</span>
+                About<span style={{ color: '#FF4D00' }}> Me</span>
+                <span style={{ color: '#FF4D00' }}>.</span>
               </h2>
               <div style={{
                 display: 'flex',

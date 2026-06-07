@@ -964,8 +964,8 @@ export default function Experience() {
                 margin: '0 0 16px',
                 color: '#F5F0E8',
               }}>
-                Work<span style={{ color: '#CCFF00' }}> History</span>
-                <span style={{ color: '#CCFF00' }}>.</span>
+                Work<span style={{ color: '#FF4D00' }}> History</span>
+                <span style={{ color: '#FF4D00' }}>.</span>
               </h2>
               <div style={{
                 display: 'flex',
