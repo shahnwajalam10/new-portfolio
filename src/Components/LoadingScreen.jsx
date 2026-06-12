@@ -581,7 +581,7 @@ export default function LoadingScreen({ onComplete }) {
                 <div style={{ marginBottom: 60 }}>
                   <h2 style={{
                     fontFamily: "'Fraunces', serif",
-                    fontSize: 'clamp(64px, 15vw, 160px)',
+                    fontSize: 'clamp(36px, 8vw, 120px)',
                     fontWeight: 900,
                     lineHeight: 0.85,
                     letterSpacing: '-0.04em',

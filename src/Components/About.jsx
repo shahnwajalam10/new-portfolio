@@ -2739,6 +2739,73 @@ export default function About() {
         .floating-particle {
           animation: floatParticle 5s ease-in-out infinite;
         }
+
+        .about-bio-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          margin-top: 48px;
+          margin-bottom: 80px;
+        }
+
+        .about-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+
+        .about-tech-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+
+        .about-header-sub {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          padding-bottom: 28px;
+          flex-wrap: wrap;
+        }
+
+        .about-tags-wrap {
+          display: flex;
+          gap: 12px;
+          margin-left: auto;
+          flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+          .about-bio-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+          .about-tech-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .about-tags-wrap {
+            margin-left: 0;
+            width: 100%;
+          }
+          .about-header-sub {
+            gap: 20px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .about-stats-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .about-tech-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+        }
       `}</style>
 
       <section className="about-root">
@@ -2807,13 +2874,7 @@ export default function About() {
                 About<span style={{ color: '#FF4D00' }}> Me</span>
                 <span style={{ color: '#FF4D00' }}>.</span>
               </h2>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 40,
-                paddingBottom: 28,
-                flexWrap: 'wrap',
-              }}>
+              <div className="about-header-sub">
                 <p style={{
                   fontFamily: "'Fraunces', serif",
                   fontSize: 18,
@@ -2826,7 +2887,7 @@ export default function About() {
                 }}>
                   Building the digital future with clean code and modern solutions.
                 </p>
-                <div style={{ display: 'flex', gap: 12, marginLeft: 'auto', flexWrap: 'wrap' }}>
+                <div className="about-tags-wrap">
                   {['Full Stack', 'Problem Solver', 'Team Player'].map(tag => (
                     <span key={tag} style={{
                       fontFamily: "'DM Mono', monospace",
@@ -2844,13 +2905,7 @@ export default function About() {
           </Reveal>
 
           {/* ── Bio section ── */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '60px',
-            marginTop: 48,
-            marginBottom: 80,
-          }}>
+          <div className="about-bio-grid">
             {/* Left - Bio text */}
             <Reveal delay={120}>
               <div>
@@ -2921,12 +2976,7 @@ export default function About() {
             {/* Right - Stats */}
             <Reveal delay={160}>
               <div ref={statsRef}>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: 16,
-                  marginBottom: 32,
-                }}>
+                <div className="about-stats-grid">
                   {[
                     { value: 45, label: 'Projects' },
                     { value: 4, label: 'Years Exp' },
@@ -3000,11 +3050,7 @@ export default function About() {
                   }}>{Object.values(skills).reduce((acc, cat) => acc + cat.items.length, 0)} technologies</span>
                 </div>
               </div>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: 24,
-              }}>
+              <div className="about-tech-grid">
                 {Object.entries(skills).map(([category, { icon: Icon, items }]) => (
                   <div key={category}>
                     <div style={{

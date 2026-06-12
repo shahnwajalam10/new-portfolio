@@ -619,17 +619,9 @@ function EduRow({ edu, idx }) {
   return (
     <Reveal delay={200 + idx * 120}>
       <div
+        className="ed-edu-row"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '80px 1fr 1fr',
-          gap: '0 48px',
-          padding: '40px 0',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
-          transition: 'background 0.3s',
-          cursor: 'default',
-        }}
       >
         {/* Big number */}
         <div style={{ paddingTop: 4 }}>
@@ -687,15 +679,9 @@ function CertRow({ cert, idx }) {
   return (
     <Reveal delay={300 + idx * 70}>
       <div
+        className="ed-cert-row"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        style={{
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '16px 0',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-          cursor: 'default',
-          gap: 24,
-        }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1 }}>
           {/* Index */}
@@ -758,10 +744,44 @@ export default function Education() {
           position: relative;
           overflow: hidden;
         }
+
+        .ed-edu-row {
+          display: grid;
+          grid-template-columns: 80px 1fr 1fr;
+          gap: 0 48px;
+          padding: 40px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          transition: background 0.3s;
+          cursor: default;
+        }
+
+        .ed-cert-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          cursor: default;
+          gap: 24px;
+        }
+
         @media(max-width:768px){
           .ed-root { padding: 80px 24px 80px; }
-          .ed-edu-row { grid-template-columns: 60px 1fr !important; }
-          .ed-edu-row > div:last-child { display: none; }
+          .ed-edu-row {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+            padding: 24px 0 !important;
+          }
+          .ed-cert-row {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 8px !important;
+            padding: 20px 0 !important;
+          }
+          .ed-cert-row > div:last-child {
+            width: 100% !important;
+            justify-content: space-between !important;
+          }
         }
 
         /* Faint noise texture overlay */

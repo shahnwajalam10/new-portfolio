@@ -32,24 +32,6 @@ body {
     cursor: pointer !important;
   }
 }
-/* ── Global ── */
-* {
-  cursor: none !important;
-  box-sizing: border-box;
-}
-/* body {
-  cursor: none;
-} */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Outfit', sans-serif;
-  overflow-x: hidden;
-  background: #0a0a0a;
-  color: #fff;
-}
 
 /* ── Selection ── */
 ::selection {

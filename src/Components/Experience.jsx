@@ -873,6 +873,57 @@ export default function Experience() {
         .glitch-hover:hover {
           animation: glitch 0.3s steps(2) both;
         }
+
+        .exp-card-grid {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          position: relative;
+        }
+
+        .exp-card-left {
+          grid-column: span 5;
+          background: #CCFF00;
+          padding: 48px 40px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .exp-card-right {
+          grid-column: span 7;
+          padding: 48px 44px;
+          border-left: 1px solid rgba(255,255,255,0.06);
+        }
+
+        @media (max-width: 900px) {
+          .exp-root {
+            padding: 80px 24px 80px;
+          }
+          .exp-card-grid {
+            grid-template-columns: 1fr;
+          }
+          .exp-card-left {
+            grid-column: span 1;
+            padding: 40px 32px;
+          }
+          .exp-card-right {
+            grid-column: span 1;
+            padding: 40px 32px;
+            border-left: none;
+            border-top: 1px solid rgba(255,255,255,0.06);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .exp-root {
+            padding: 60px 16px 60px;
+          }
+          .exp-card-left {
+            padding: 32px 20px;
+          }
+          .exp-card-right {
+            padding: 32px 20px;
+          }
+        }
       `}</style>
 
       <section className="exp-root">
@@ -1023,20 +1074,10 @@ export default function Experience() {
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
               }}>
                 
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(12, 1fr)',
-                  position: 'relative',
-                }}>
+                <div className="exp-card-grid">
                   
                   {/* Left accent panel - lime green */}
-                  <div style={{
-                    gridColumn: 'span 5',
-                    background: '#CCFF00',
-                    padding: '48px 40px',
-                    position: 'relative',
-                    overflow: 'hidden',
-                  }}>
+                  <div className="exp-card-left">
                     <div style={{
                       position: 'absolute',
                       bottom: -20,
@@ -1124,11 +1165,7 @@ export default function Experience() {
                   </div>
 
                   {/* Right content panel */}
-                  <div style={{
-                    gridColumn: 'span 7',
-                    padding: '48px 44px',
-                    borderLeft: '1px solid rgba(255,255,255,0.06)',
-                  }}>
+                  <div className="exp-card-right">
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',

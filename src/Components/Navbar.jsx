@@ -197,10 +197,10 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2"
           >
-            <span className="text-2xl md:text-3xl font-black tracking-tighter uppercase text-white">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tighter uppercase text-white">
               SHAHNWAJ
             </span>
-            <span className="text-2xl md:text-3xl font-black tracking-tighter uppercase text-[#CCFF00]">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tighter uppercase text-[#CCFF00]">
               ALAM
             </span>
             <motion.div

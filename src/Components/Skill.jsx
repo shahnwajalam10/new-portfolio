@@ -3749,14 +3749,7 @@ function SkillRow({ skill, idx }) {
       {/* — collapsed header row — */}
       <div
         onClick={() => setOpen((o) => !o)}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "60px 1fr auto 80px",
-          alignItems: "center",
-          padding: "28px 0",
-          cursor: "pointer",
-          gap: 0,
-        }}
+        className="skill-header-row"
       >
         {/* number */}
         <span style={{
@@ -3788,10 +3781,8 @@ function SkillRow({ skill, idx }) {
         </div>
 
         {/* stack tags — hidden on expand */}
-        <div style={{
-          display: "flex", gap: 6, flexWrap: "wrap",
-          justifyContent: "flex-end", paddingRight: 32, maxWidth: 320,
-          opacity: open ? 0 : 1, transition: "opacity 0.2s",
+        <div className="skill-stack-tags" style={{
+          opacity: open ? 0 : 1,
         }}>
           {skill.stack.slice(0, 3).map(t => (
             <span key={t} style={{
@@ -3851,11 +3842,7 @@ function SkillRow({ skill, idx }) {
           }}>{skill.note}</p>
 
           {/* two-col layout */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0 64px",
-          }}>
+          <div className="skill-expand-grid">
 
             {/* highlights */}
             <div>
@@ -4056,9 +4043,44 @@ export default function Skill() {
           z-index: 1;
         }
 
+        .skill-header-row {
+          display: grid;
+          grid-template-columns: 60px 1fr auto 80px;
+          align-items: center;
+          padding: 28px 0;
+          cursor: pointer;
+          gap: 0;
+        }
+
+        .skill-expand-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 64px;
+        }
+
+        .skill-stack-tags {
+          display: flex;
+          gap: 6px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          padding-right: 32px;
+          max-width: 320px;
+          transition: opacity 0.2s;
+        }
+
         @media (max-width: 768px) {
           .skill-container { padding: 0 24px; }
-          .skill-expand-grid { grid-template-columns: 1fr !important; }
+          .skill-header-row {
+            grid-template-columns: 40px 1fr 60px !important;
+            padding: 20px 0 !important;
+          }
+          .skill-expand-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px 0 !important;
+          }
+          .skill-stack-tags {
+            display: none !important;
+          }
         }
       `}</style>
 

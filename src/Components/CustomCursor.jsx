@@ -110,8 +110,18 @@ import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const checkDevice = () => {
+      const isTouch = window.matchMedia("(pointer: coarse)").matches;
+      const isMobile = window.innerWidth <= 768;
+      setIsVisible(!isTouch && !isMobile);
+    };
+
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+    
     const moveCursor = (e) => {
       setPosition({
         x: e.clientX,
@@ -122,9 +132,12 @@ export default function CustomCursor() {
     window.addEventListener("mousemove", moveCursor);
 
     return () => {
+      window.removeEventListener("resize", checkDevice);
       window.removeEventListener("mousemove", moveCursor);
     };
   }, []);
+
+  if (!isVisible) return null;
 
   return (
     <div

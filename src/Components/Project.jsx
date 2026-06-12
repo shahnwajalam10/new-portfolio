@@ -838,10 +838,7 @@ function ProjectCard({ p, idx }) {
       </div>
 
       {/* Main content grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 0,
+      <div className="pj-card-grid" style={{
         padding: '48px 0 52px',
       }}>
         {/* Left: Title block */}
@@ -1000,6 +997,11 @@ export default function Project() {
           color: #F5F0E8;
           position: relative;
           overflow: hidden;
+        }
+        .pj-card-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
         }
         @media (max-width: 768px) {
           .pj-root { padding: 80px 24px 80px; }

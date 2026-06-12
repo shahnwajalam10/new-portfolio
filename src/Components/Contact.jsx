@@ -712,6 +712,21 @@ export default function Contact() {
           background: #080808;
           position: relative;
           overflow: hidden;
+          padding: 110px 48px 120px;
+          min-height: 100vh;
+          color: #F5F0E8;
+        }
+
+        @media (max-width: 768px) {
+          .contact-root {
+            padding: 80px 24px 80px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .contact-root {
+            padding: 60px 16px 60px;
+          }
         }
 
         .contact-root::before {
@@ -751,13 +766,33 @@ export default function Contact() {
           border-color: #CCFF00;
           box-shadow: 0 0 20px rgba(204, 255, 0, 0.1);
         }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          gap: 64px;
+        }
+
+        .contact-left {
+          grid-column: span 5;
+        }
+
+        .contact-right {
+          grid-column: span 7;
+        }
+
+        @media (max-width: 900px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+          .contact-left, .contact-right {
+            grid-column: span 1;
+          }
+        }
       `}</style>
 
-      <section ref={ref} className="contact-root" style={{
-        padding: '110px 48px 120px',
-        minHeight: '100vh',
-        color: '#F5F0E8',
-      }}>
+      <section ref={ref} className="contact-root">
         {/* Floating particles */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
           {[...Array(50)].map((_, i) => (
@@ -863,14 +898,10 @@ export default function Contact() {
           </Reveal>
 
           {/* 2-column grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '64px',
-          }}>
+          <div className="contact-grid">
             
             {/* Left column - Contact Info */}
-            <div style={{ gridColumn: 'span 5' }}>
+            <div className="contact-left">
               <Reveal delay={120}>
                 <div style={{
                   fontFamily: "'DM Mono', monospace",
@@ -925,7 +956,7 @@ export default function Contact() {
             </div>
 
             {/* Right column - Contact Form */}
-            <div style={{ gridColumn: 'span 7' }}>
+            <div className="contact-right">
               <Reveal delay={160}>
                 <div style={{
                   fontFamily: "'DM Mono', monospace",

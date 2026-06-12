@@ -531,7 +531,7 @@ export default function Hero() {
         }
         .hero-name-line {
           font-family: 'Syne', sans-serif;
-          font-size: clamp(64px, 12vw, 120px);
+          font-size: clamp(40px, 12vw, 120px);
           font-weight: 800;
           line-height: 0.88;
           letter-spacing: -0.02em;
@@ -714,6 +714,34 @@ export default function Hero() {
         @keyframes heroFadeIn {
           from { opacity: 0; }
           to   { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+          .hero-root {
+            cursor: auto !important;
+          }
+          .hero-cursor, .hero-cursor-ring {
+            display: none !important;
+          }
+          .hero-content {
+            padding: 120px 24px 60px !important;
+          }
+          .hero-scroll-cue {
+            display: none !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-content {
+            padding: 100px 16px 40px !important;
+          }
+          .hero-ctas {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .hero-btn-primary, .hero-btn-ghost {
+            width: 100% !important;
+            justify-content: center !important;
+          }
         }
       `}</style>
 
