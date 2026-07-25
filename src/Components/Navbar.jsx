@@ -191,22 +191,22 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/">
+        <Link to="/" className="max-w-[calc(100%-56px)]">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-1 sm:gap-2 min-w-0"
           >
-            <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tighter uppercase text-white">
-              SHAHNWAJ
+            <span className="text-lg sm:text-2xl md:text-3xl font-black tracking-tighter uppercase text-white whitespace-nowrap">
+              SHAHNAWAZ
             </span>
-            <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tighter uppercase text-[#CCFF00]">
+            <span className="hidden sm:inline text-2xl md:text-3xl font-black tracking-tighter uppercase text-[#CCFF00] whitespace-nowrap">
               ALAM
             </span>
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="ml-1"
+              className="hidden sm:block ml-1"
             >
               <span className="text-2xl">⚡</span>
             </motion.div>
@@ -248,7 +248,7 @@ export default function Navbar() {
         {/* Mobile Hamburger */}
         <motion.button
           whileTap={{ scale: 0.9 }}
-          className="lg:hidden text-white p-2 border border-white/20 hover:border-[#CCFF00]/50 transition-colors"
+          className="lg:hidden shrink-0 text-white p-2 border border-white/20 hover:border-[#CCFF00]/50 transition-colors"
           onClick={() => setOpen(!open)}
         >
           <AnimatePresence mode="wait">

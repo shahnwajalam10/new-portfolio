@@ -588,7 +588,7 @@ export default function LoadingScreen({ onComplete }) {
                     margin: '0 0 24px',
                     color: '#F5F0E8',
                   }}>
-                  Loading SHAHNWAJ PORTFOLIO<span style={{ color: '#CCFF00' }}>.</span>
+                  Loading SHAHNAWAZ PORTFOLIO<span style={{ color: '#CCFF00' }}>.</span>
                   </h2>
                   <div style={{
                     display: 'flex', alignItems: 'center', gap: 40, flexWrap: 'wrap',

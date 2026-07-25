@@ -492,6 +492,7 @@ export default function Hero() {
           z-index: 3;
           padding: 160px 40px 60px;
           max-width: 900px;
+          width: 100%;
         }
 
         /* Badge */
@@ -527,6 +528,7 @@ export default function Hero() {
         /* Name */
         .hero-name-block {
           margin-bottom: 28px;
+          max-width: 100%;
           animation: heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.35s both;
         }
         .hero-name-line {
@@ -537,6 +539,7 @@ export default function Hero() {
           letter-spacing: -0.02em;
           text-transform: uppercase;
           display: block;
+          max-width: 100%;
         }
         .hero-name-white { color: var(--white); }
         .hero-name-lime  { color: var(--lime);  }
@@ -724,7 +727,18 @@ export default function Hero() {
             display: none !important;
           }
           .hero-content {
-            padding: 120px 24px 60px !important;
+            padding: 116px 20px 56px !important;
+          }
+          .hero-name-line {
+            font-size: clamp(26px, 8.2vw, 52px) !important;
+            line-height: 0.94 !important;
+            letter-spacing: -0.008em !important;
+            white-space: nowrap !important;
+            overflow-wrap: normal !important;
+            word-break: keep-all !important;
+          }
+          .hero-name-white {
+            font-size: clamp(24px, 7.6vw, 44px) !important;
           }
           .hero-scroll-cue {
             display: none !important;
@@ -732,7 +746,16 @@ export default function Hero() {
         }
         @media (max-width: 480px) {
           .hero-content {
-            padding: 100px 16px 40px !important;
+            padding: 96px 14px 40px !important;
+          }
+          .hero-name-line {
+            font-size: clamp(22px, 7.2vw, 34px) !important;
+          }
+          .hero-name-white {
+            font-size: clamp(20px, 6.6vw, 30px) !important;
+          }
+          .hero-name-block {
+            margin-bottom: 22px !important;
           }
           .hero-ctas {
             flex-direction: column !important;
@@ -741,6 +764,18 @@ export default function Hero() {
           .hero-btn-primary, .hero-btn-ghost {
             width: 100% !important;
             justify-content: center !important;
+          }
+        }
+        @media (max-width: 390px) {
+          .hero-content {
+            padding: 92px 12px 36px !important;
+          }
+          .hero-name-line {
+            font-size: clamp(20px, 6.6vw, 28px) !important;
+            line-height: 0.96 !important;
+          }
+          .hero-name-white {
+            font-size: clamp(18px, 6vw, 24px) !important;
           }
         }
       `}</style>
@@ -781,7 +816,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-name-block">
-            <span className="hero-name-line hero-name-white">SHAHNWAJ</span>
+            <span className="hero-name-line hero-name-white">SHAHNAWAZ</span>
             <span className="hero-name-line hero-name-lime">
               ALAM<span style={{ color: '#FF4D00' }}>.</span>
             </span>
